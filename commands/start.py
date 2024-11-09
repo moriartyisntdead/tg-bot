@@ -1,7 +1,9 @@
 from telebot import types
 
+from initBot import bot
 
-def start(message, bot):
+@bot.message_handler(commands=['start'])
+def start(message):
   username = message.from_user.username
 
   if username:
