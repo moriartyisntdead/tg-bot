@@ -1,3 +1,5 @@
+from base import Base, engine
+
 from telebot import types
 from telebot.types import BotCommand
 
@@ -8,6 +10,7 @@ from commands import start, about
 from commands.handlers import contactHandler, keyboardButtonsHandler, textButtonsHandler
 from utils.utils import returnPhoneInfo
 
+Base.metadata.create_all(engine)
 
 bot.set_my_commands([
   BotCommand('start', 'Запустити бота'),

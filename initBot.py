@@ -1,5 +1,7 @@
+import os
 import telebot
+from dotenv import load_dotenv
 
-from telegramToken import token
+load_dotenv()
 
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(os.getenv("TOKEN"))
